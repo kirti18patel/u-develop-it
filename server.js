@@ -15,12 +15,16 @@ const db = mysql.createConnection(
       // Your MySQL username,
       user: 'root',
       // Your MySQL password
-      password: '',
+      password: 'Aalap@21',
       database: 'election'
     },
     console.log('Connected to the election database.')
   );
 
+  db.query(`SELECT * FROM candidates`, (err, rows) => {
+    console.log(rows);
+  });
+  
   // Default response for any other request (Not Found)
 app.use((req, res) => {
     res.status(404).end();
